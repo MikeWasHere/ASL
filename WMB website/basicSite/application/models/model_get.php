@@ -1,9 +1,8 @@
 <?php 
 	
-class Get_db extends CI_Model{
-	function getAll(){
-		$query = $this->db->query("SELECT * FROM test");
-		
+class Model_get extends CI_Model{
+	function getData($page){
+		$query = $this->db->get_where("pageData", array("page"=>$page));
 		return $query->result();
 	}
 	

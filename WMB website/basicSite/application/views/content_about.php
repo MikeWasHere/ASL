@@ -1,4 +1,17 @@
 <div id="content">
-		<?php echo heading("This My About Page Bitch", 1); ?>
-		<p>Look, just because I don't be givin' no man a foot massage don't make it right for Marsellus to throw Antwone into a glass motherfuckin' house, fuckin' up the way the nigger talks. Motherfucker do that shit to me, he better paralyze my ass, 'cause I'll kill the motherfucker, know what I'm sayin'? Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass.</p>
+		<?php 
+		
+		foreach($results as $row){
+			$title = $row->title;
+			$text1 = $row->text1;
+			$text2 = $row->text2;
+		}
+		
+		echo heading($title, 1);
+		
+		 ?>
+
+		
+		<p><?php echo $text1; ?></p>
+		<p><?php echo $text2; ?></p>
 	</div>
