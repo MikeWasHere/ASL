@@ -1,60 +1,481 @@
-body, html{ margin:0; 
-					padding: 0;
-					}
-					
-		body{
-			background-color: #EEE; 
-		}
-		
-		h1. h2, h3, h4, h5, p, a, li, ul{
-			font-family: arial, sans-serif;
-			color: black;
-			text-decoration: none;
-		}
-		
-		#nav{
-			margin: 50px auto 0 auto;
-			width: 1000px;
-			background-color: #888;
-			height: 15px;
-			padding: 20px;
-		}
-		
-		#nav a:hover{
-			color: green;
-		}
-		
-		#nav ul{
-			list-style-type: none;
-			float: left;
-			margin: 0 50px;
-		}
-		
-		#nav ul li{
-			display: inline;
-		}
-		
-		#content{
-			width: 1000px;
-			min-height: 100%;
-			margin: 0 auto;
-			padding: 20px;
-		}
-		
-		#contact{
-			width: 170px;
-			min-height: 100%;
-			margin: 0 auto;
-			padding: 20px;
-		}
-		
-		#footer{
-			width: 400px;
-			height: 15px;
-			margin: 0 auto;
-			padding: 20px;
-		}
-		
-		#footer p{
-			color: #777;
-		}
+header{
+    background: url("../images/dark_wall.png");
+    float: left;
+    width: 100%;
+    clear: both;
+}
+
+#sign h1{
+    font-family: 'Bevan', cursive;
+    color: #f5f5f5;
+}
+
+#top{
+    background: url("../images/dark_wall.png");
+    width: 100%;
+    float: left;
+}
+
+#big{
+    padding: 20px;
+    float: left;
+    width: 40%;
+    margin: 0;
+}
+
+#lib{
+    background-color: #FCEE21;
+    border: none;
+    -webkit-border-bottom-left-radius: 8px;
+    -webkit-border-bottom-right-radius: 8px;
+    color: #000000;
+    font-size: 20px;
+    float: right;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+#lib:hover{
+    background-color: #fffd30;
+    color: #323232;
+    box-shadow: 0px 3px 9px #000000;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+
+}
+
+#sign{
+    float: left;
+    width: 50%;
+}
+
+#no{
+    color: #E74700;
+    font-size: 20px;
+    float: left;
+    clear: both;
+    margin-top: 10px;
+    margin-left: 40px;
+    border-bottom: 2px #E74700 solid;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+#no:hover{
+    color: #f1581a;
+    text-shadow: 1px 1px 5px #f1581a;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+/*-------------- Sign in Options --------------*/
+#btn-Email{
+    background-color: #E74700;
+    border: none;
+    border-radius: 7px;
+    color: #fbfbfb;
+    font-size: 16px;
+    float: left;
+    margin: 5px;
+    margin-left: 40px;
+    width: 50%;
+    text-align: center;
+    padding: 12px 10px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+#btn-Email:hover{
+    background-color: #f1581a;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+    margin-bottom: 10px;
+    box-shadow: 0px 3px 9px #000000;
+}
+
+button img{
+    float: left;
+}
+
+button p{
+    margin: 0;
+}
+
+#btn-google{
+    background-color: #D62929;
+    border: none;
+    border-radius: 7px;
+    color: #fbfbfb;
+    font-size: 16px;
+    float: left;
+    margin: 5px;
+    margin-left: 40px;
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+#btn-google:hover {
+    background-color: #d64144;
+    box-shadow: 0px 3px 9px #000000;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+    margin-bottom: 10px;
+}
+
+#btn-google p{
+    font-size: 17px;
+}
+
+#btn-facebook{
+    background-color: #3469D1;
+    border: none;
+    border-radius: 7px;
+    color: #fbfbfb;
+    font-size: 16px;
+    float: left;
+    margin: 5px;
+    margin-left: 40px;
+    width: 50%;
+    text-align: center;
+    padding: 10px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+#btn-facebook:hover{
+    background-color: #4573d1;
+    box-shadow: 0px 3px 9px #000000;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+    margin-bottom: 10px;
+}
+
+#btn-facebook p{
+    font-size: 17px;
+}
+/*-------------- Sign in Options End --------------*/
+
+/*-------------- Dropdown menu End --------------*/
+/*.login{*/
+    /*position: absolute;*/
+    /*left: 1100px;*/
+    /*bottom: 710px;*/
+/*}*/
+
+
+nav#links {
+    width:724px;
+    float:left;
+}
+
+nav#links ul {
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+
+#links ul li {
+    margin:0 12px;
+    padding:0;
+    float:left;
+    text-align:center;
+}
+
+#links ul li a {
+    display:block;
+    padding:0 2px;
+}
+
+
+nav#login {
+    width:300px;
+    float: right;
+    position:relative;
+}
+
+#login p {
+    margin:0;
+    padding:10px;
+    cursor:pointer;
+    background-position:left;
+    background-repeat:no-repeat;
+    font-family: 'Bevan', cursive;
+}
+
+#triangle{
+    position: relative;
+    bottom: 20px;
+    left: 130px;
+}
+
+#login-form {
+    position:absolute;
+    z-index:999;
+    background-color: #DDDDDD;
+    border:solid 1px #DDDDDD;
+    border-radius: 10px;
+    padding: 0 2px 12px 12px;
+    width:300px;
+    box-shadow: 0px 3px 9px #000000;
+    top:70px;
+    left: 100px;
+    display:none;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+#login-form label {
+    display:block;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+    display:block;
+    width: 97%;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-family: 'Alegreya', serif;
+    border: none;
+}
+
+
+#login-form input,
+#login-form label {
+    margin-bottom:4px;
+}
+
+#signinButton{
+    background-color: #FCEE21;
+    border: none;
+    border-radius: 7px;
+    color: #000000;
+    font-size: 20px;
+    float: right;
+    margin: 5px;
+    width: 97%;
+    font-family: 'Bevan', cursive;
+    padding: 5px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+#signinButton:hover{
+    background-color: #fffd30;
+    color: #323232;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+/*-------------- Dropdown menu End --------------*/
+
+#bottom{
+    background-image: url("../images/Wheres%20my%20bus%20background.png");
+    width: 100%;
+    float: left;
+    padding: 10px;
+}
+
+.left{
+    width: 31%;
+    float: left;
+    margin-left: 20px;
+    color: #f5f5f5;
+}
+
+.left h3{
+    font-family: 'Bevan', cursive;
+    letter-spacing: 1px;
+    font-size: 28px;
+    text-align: center;
+}
+
+.sm{
+    margin: 2% 45%;
+}
+
+.lp{
+    font-size: 20px;
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+}
+
+#bottom a{
+    font-family: 'Alegreya', serif;
+    font-size: 20px;
+    float: right;
+    margin-right: 5px;
+    color: #FCEE21;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    transition: all .2s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#bottom a:hover{
+    font-size: 23px;
+    color: #fffe5c;
+    text-shadow: 1px 1px 5px #fffe5c;
+    -webkit-transition: all .2s ease;
+    -moz-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+footer{
+    width: 100%;
+    background-color: #323232;
+    float: left;
+}
+
+#left{
+    float: left;
+    margin: 2%;
+    width: 35%;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+    color: #f5f5f5;
+}
+
+#left p{
+    float: right;
+}
+
+#br{
+    float: left;
+    margin: 2%;
+    width: 50%;
+    color: #f5f5f5;
+    padding: 10px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold;
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    margin: 5px;
+}
+
+#face{
+    margin: 5px 3px;
+    margin-right: 7px;
+}
+
+/*======================================= Find_Bus Page* =======================================*/
+
+nav{
+    width: 25%;
+    float: left;
+}
+
+/*#Register-btn{*/
+    /*background-color: #E74700;*/
+    /*border: none;*/
+    /*border-radius: 7px;*/
+    /*color: #fbfbfb;*/
+    /*font-size: 16px;*/
+    /*float: left;*/
+    /*margin: 5px;*/
+    /*margin-left: 40px;*/
+    /*width: 20%;*/
+    /*text-align: center;*/
+    /*padding: 12px 10px;*/
+    /*-webkit-transition: all .5s ease;*/
+    /*-moz-transition: all .5s ease;*/
+    /*transition: all .5s ease;*/
+/*}*/
+
+#logo{
+    margin: 15px;
+}
+
+#Destination{
+    float: left;
+    width: 30%;
+    margin: 10% 15%;
+    background-color: #323232;
+    color: #f5f5f5;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.AB{
+    width: 90%;
+    margin: 1% 5%;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    color: #323232;
+}
+
+.where{
+    margin: 10px;
+    margin-left: 30px;
+}
+
+input.where{
+    position: relative;
+    right: 5px;
+}
+
+#getBus{
+    background-color: #FCEE21;
+    border: none;
+    border-radius: 7px;
+    color: #000000;
+    font-size: 20px;
+    float: right;
+    margin: 5px;
+    width: 97%;
+    font-family: 'Bevan', cursive;
+    padding: 5px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+#getBus:hover{
+    background-color: #fffd30;
+    color: #323232;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+#Destination h1{
+    font-family: 'Bevan', cursive;
+    color: #f5f5f5;
+    margin: 1% 5%;
+    text-align: center;
+}
+
+.yas{
+    color: lightgray;
+}
+
+#map_canvas{
+    position: fixed;
+    top: 120px;
+    right: 150px;
+}
