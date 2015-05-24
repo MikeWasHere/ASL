@@ -1,7 +1,12 @@
      <!------------------ Google maps code ------------------>
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-
+    <script type="text/javascript" src="<?php echo base_url(); ?>scripts/jquery-1.11.0.min.js"></script>
+    
 <script>
+
+	/* $(document).ready(function(){ */
+		
+		
 	
 	x = navigator.geolocation;
 	
@@ -11,28 +16,37 @@
 		
 		// Fetch the coordinates
 		
-		var mylat = position.coords.latitude;
-		var mylong = position.coords.longitude;
+			var myCallback = function(location) {
+			console.log(location);
+				var mylat = location.latitude;
+				var mylong = location.longitude;
+				
+				// Gooogle-API-ready latitudes and longtitude string
+				
+				var coords = new google.maps.LatLng(mylat, mylong);
+				
+				//setting up google maps
+				
+				var mapOptions = {
+					zoom: 16,
+					center: coords,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				}
+				
+				// Creating the Map
+				
+				var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+				
+				// Create a marker
+				
+				var marker = new google.maps.Marker({map: map, position: coords});
 		
-		// Gooogle-API-ready latitudes and longtitude string
+
+				};
+
+
+	NoGPS.getLocation(myCallback);
 		
-		var coords = new google.maps.LatLng(mylat, mylong);
-		
-		//setting up google maps
-		
-		var mapOptions = {
-			zoom: 16,
-			center: coords,
-			mapTypeId: google.maps.MapTypeId.ROADMAP
-		}
-		
-		// Creating the Map
-		
-		var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-		
-		// Create a marker
-		
-		var marker = new google.maps.Marker({map: map, position: coords});
 		
 		/*
 $('#lat').html(mylat);
@@ -40,9 +54,58 @@ $('#lat').html(mylat);
 */
 	}
 	
+	var myCallback = function(location) {
+			console.log(location);
+				var mylat = location.latitude;
+				var mylong = location.longitude;
+				
+				// Gooogle-API-ready latitudes and longtitude string
+				
+				var coords = new google.maps.LatLng(mylat, mylong);
+				
+				//setting up google maps
+				
+				var mapOptions = {
+					zoom: 16,
+					center: coords,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				}
+				
+				// Creating the Map
+				
+				var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+				
+				// Create a marker
+				
+				var marker = new google.maps.Marker({map: map, position: coords});
+				
+				var getAPI = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+mylat+','+mylong+'&radius=500&key=AIzaSyAQrULkSyEYLkpUlovopMwSz4xIGpd2-rk';
+				
+				jQuery.get(getAPI,function(data){
+					console.log(data)
+				});
+		
+
+				};
+
+	
+	function findLocation(){
+		NoGPS.getLocation(myCallback);
+
+	}
+	
 	function failure(){
 		$('#lat').html("<p>It didn't work, cordinated not available!</p>")
 	}
+	
+	
+	// A location object will be passed to your callback
+
+/*
+
+	});
+*/
+
 	
 </script>
 
@@ -84,7 +147,7 @@ $('#lat').html(mylat);
         <input class="yas" type="time">
     </label>
 
-        <button name="signinButton" type="submit" id="getBus" value="Sign In">Find it</button>
+        <button name="signinButton" type="submit" id="getBus" onClick="findLocation()" value="Sign In">Find it</button>
     </form>
 
 </div>

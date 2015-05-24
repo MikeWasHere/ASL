@@ -15,8 +15,7 @@
 
 
 </body>
-
-<script type="text/javascript" src="<?php echo base_url(); ?>scripts/jquery-1.11.0.min.js"></script>
+<script src="//api.nogps.io/v1.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/main.js"></script>
 <script type="text/javascript" src="<?php echo base_url(); ?>scripts/bootstrap.min.js"></script>
 </html>
