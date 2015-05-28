@@ -1,3 +1,5 @@
+
+
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -33,6 +35,23 @@ $this->load->model("model_get");
 		$this->load->view("site_nav");
 		$this->load->view("content_contact", $data);
 		$this->load->view("site_footer");
+	}
+	
+	public function map(){
+		$data = array();
+		$this->load->library('googlemaps');
+		/* $config  = array(); */
+		$config['center'] = 'auto';
+		
+		$config['places'] = TRUE;
+		$config['placesLocation'] = '28.633208221340514, -81.31748557090759';
+		$config['placesRadius'] = 500; 
+		$this->googlemaps->initialize($config);
+		
+		$data['map'] = $this->googlemaps->create_map();
+		
+		
+		$this->load->view('newview',$data);
 	}
 	
 	public function send_email(){

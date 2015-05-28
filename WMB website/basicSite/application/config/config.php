@@ -50,6 +50,25 @@ $config['uri_protocol']	= 'REQUEST_URI';
 
 /*
 |--------------------------------------------------------------------------
+| Facebook Stuff
+|--------------------------------------------------------------------------
+|
+| This option allows you to costomize your Facebook API stuff:
+|
+| http://codeigniter.com/user_guide/general/urls.html
+*/
+$config['facebook']['api_id'] = '1448197142161410';
+$config['facebook']['app_secret'] = '3e69ed16cbaf129686564c632097df38';
+$config['facebook']['redirect_url'] = 'http://localhost:8888/FBlogin/';
+$config['facebook']['permissions'] = array(
+  'email',
+  'user_location',
+  'user_birthday'
+);
+
+
+/*
+|--------------------------------------------------------------------------
 | URL suffix
 |--------------------------------------------------------------------------
 |
