@@ -7,7 +7,18 @@
 </head>
 <body>
 
+
+<script>
+	<?php 
+	$phpText = "Are you near?"
+?>
+
+var deAlert = <?php echo json_encode($phpText); ?>;
+alert(deAlert);
+</script>
+
 <p>ayyy my guyyy.</p>
+
 
 <?php echo $map['html'] ?>
 

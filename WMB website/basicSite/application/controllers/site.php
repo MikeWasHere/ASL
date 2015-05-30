@@ -39,13 +39,18 @@ $this->load->model("model_get");
 	
 	public function map(){
 		$data = array();
+		$this->load->library('geoplugin');
+		$geoplugin = new geoPlugin();
+		$geoplugin->locate();
+		$lat = "{$geoplugin->latitude}";
+		$long = "{$geoplugin->longitude}";
+		var_dump($lat);
 		$this->load->library('googlemaps');
 		/* $config  = array(); */
 		$config['center'] = 'auto';
-		
 		$config['places'] = TRUE;
-		$config['placesLocation'] = '28.633208221340514, -81.31748557090759';
-		$config['placesRadius'] = 500; 
+		$config['placesLocation'] = "$lat, $long"; // You need to push actual coordinates. 'auto' wont work here.
+		$config['placesRadius'] = 1500; 
 		$this->googlemaps->initialize($config);
 		
 		$data['map'] = $this->googlemaps->create_map();
@@ -53,6 +58,23 @@ $this->load->model("model_get");
 		
 		$this->load->view('newview',$data);
 	}
+	
+	
+	/*
+public function coor(){
+		$this->input->post();
+	
+		
+	}
+*/
+	
+	
+/*
+	public function insert(){
+		$this->load->model("model_get");
+		$this->insert1->("");
+	}
+*/
 	
 	public function send_email(){
 		$this->load->library("form_validation");

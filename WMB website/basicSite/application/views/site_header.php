@@ -11,7 +11,7 @@
     <link href='http://fonts.googleapis.com/css?family=Alegreya:400,900' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
 
-    <?php echo $map['js'] ?>
+  <!--   <?php echo $map['js'] ?> -->
 
 </head>
 <body>

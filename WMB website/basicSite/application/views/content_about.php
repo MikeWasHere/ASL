@@ -6,12 +6,16 @@
     
     
 <!-- Replace with chrisGPS for NoGPS feature-->    
-<!--
+
 <script>
+
 x = navigator.geolocation;
 	
 	x.getCurrentPosition(success, failure);
 	
+	p = {
+		coords:{latitude:'0.24',longitude:'0.25'}
+		};
 	function success(position) {
 		
 		// Fetch the coordinates
@@ -38,14 +42,15 @@ x = navigator.geolocation;
 		// Create a marker
 		
 		var marker = new google.maps.Marker({map: map, position: coords});
-		
-		var getAPI = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+mylat+','+mylong+'&radius=500&key=AIzaSyAQrULkSyEYLkpUlovopMwSz4xIGpd2-rk';
-				
-		jQuery.get(getAPI,function(data){
+		p = position;
+		var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+mylat+','+mylong+'&radius=500&key=AIzaSyDBAXq9xOI_ynPffhkPhM1Z-8qFY1fUjVE';
+						
+		jQuery.post(p,function(data){
 				
 			console.log(data)
 		});
-
+		
+		
 		
 		/*
 $('#lat').html(mylat);
@@ -53,12 +58,14 @@ $('#lat').html(mylat);
 */
 	}
 	
+	/* var myVar = setInterval(function(){success(p)},3000);  <-- this will automatically run it when the page starts.*/ 
+	
 	function failure(){
 		$('#lat').html("<p>It didn't work, cordinated not available!</p>")
 	}
 
 </script>
--->
+
 <!-- Replace with chrisGPS for NoGPS feature END--> 
 
 <style>
@@ -98,14 +105,16 @@ $('#lat').html(mylat);
         <input class="yas" type="time">
     </label>
 
-        <button name="signinButton" type="submit" id="getBus" onClick="findLocation()" value="Sign In">Find it</button>
+        <button name="signinButton" type="submit" id="getBus" onClick="myVar=setInterval(function(){success(p)},3000);" value="Sign In">Check in Bus</button>
+        <button name="stopTrackingButton" type="submit" id="stopBus" onClick="clearTimeout(myVar);" value="stop">Check out Bus</button>
     </form>
 
 </div>
 
+	<!-- <a href="<?php echo base_url(); ?>site/coor">Finnna Find it</a> -->
+
 <div id="map">
 
-<?php echo $map['html'] ?>
 
 
 </div>
