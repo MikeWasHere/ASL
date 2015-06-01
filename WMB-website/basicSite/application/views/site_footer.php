@@ -1,10 +1,10 @@
 <footer>
-    <div id="left">
+    <div class="col-md-6" id="left">
         <blockqoute>"This Company seriously helped my company through our desgn flaws in our websites. thank you Eclipse Designs"</blockqoute> <br>
         <p id="sincerely">-Leroy Jenkins</p>
     </div>
 
-    <div id="br">
+    <div class="col-md-6" id="br">
         <ul>
             <li><img src="<?php echo base_url(); ?>images/instagram.png"> Join us on instagram. We promise not to take any selfies of ourselves or food.</li>
             <li><img src="<?php echo base_url(); ?>images/twitter.png"> tweet much? well then join us by following us and get heads up on discounts. </li>

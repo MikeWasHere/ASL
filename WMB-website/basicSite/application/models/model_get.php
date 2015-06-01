@@ -29,6 +29,14 @@ class Model_get extends CI_Model{
 	function empty1($table){
 		$this->db->empty($table);
 	}
+	
+	function getCoor($lat,$long){
+		$this->db->insert("coordinatesDAWG", array('lat'=>$lat, 'long'=>$long));		
+	}
+	function loadCoor(){
+		$query = $this->db->query('select * from coordinatesDAWG order by id DESC LIMIT 1'); 
+		return $query->result();				
+	}
 }
 	
 ?> 

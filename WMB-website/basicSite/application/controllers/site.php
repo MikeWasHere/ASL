@@ -18,6 +18,8 @@ class Site extends CI_Controller {
 		$this->load->view("site_footer");				
 	}
 	
+	
+	
 	public function about(){
 		/*
 $this->load->model("model_get");
@@ -38,25 +40,46 @@ $this->load->model("model_get");
 	}
 	
 	public function map(){
+	
+	$this->load->model('model_get');
+	
 		$data = array();
 		$this->load->library('geoplugin');
 		$geoplugin = new geoPlugin();
 		$geoplugin->locate();
 		$lat = "{$geoplugin->latitude}";
 		$long = "{$geoplugin->longitude}";
-		var_dump($lat);
+		$location['location'] = Array("lat"=> $lat, "long"=>$long);
+
 		$this->load->library('googlemaps');
-		/* $config  = array(); */
+		/*$config  = array(); */
 		$config['center'] = 'auto';
-		$config['places'] = TRUE;
-		$config['placesLocation'] = "$lat, $long"; // You need to push actual coordinates. 'auto' wont work here.
-		$config['placesRadius'] = 1500; 
+		
 		$this->googlemaps->initialize($config);
 		
 		$data['map'] = $this->googlemaps->create_map();
 		
+		$this->model_get->getCoor($lat,$long);
 		
-		$this->load->view('newview',$data);
+		$this->load->view('site_header');
+		$this->load->view('newview',$location);
+		$this->load->view('site_footer');
+
+	}
+	
+	public function usermap(){
+	
+		$this->load->model('model_get');
+		
+		$getLatest = $this->model_get->loadCoor();
+		$name = $getLatest[0];
+		$lat = $name->lat;
+		$long = $name->long;
+		$location['location'] = Array('lat'=> $lat, 'long'=> $long);
+		$this->load->view('site_header');
+		$this->load->view('userview', $location);
+		$this->load->view('site_footer');
+
 	}
 	
 	

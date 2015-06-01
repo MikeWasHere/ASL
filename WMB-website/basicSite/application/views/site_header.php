@@ -121,36 +121,23 @@
   }
 </script>
 
-<!--
-  Below we include the Login Button social plugin. This button uses
-  the JavaScript SDK to present a graphical Login button that triggers
-  the FB.login() function when clicked.
--->
-
-<fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
-</fb:login-button>
-
-<div id="status">
-</div>
-
-<a href="#" onclick="FB.logout()">Logout</a>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3&appId=442869992540968";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <header>
-    <div class="container login">
 
-        <nav id="login">
-            <button id="lib"><p>login</p></button>
-            <div id="login-form">
-                <img id="triangle" src="<?php echo base_url(); ?>images/Wheres%20my%20bus-login-triangle-08.png">
-                <form>
-                    <input name="signinButton" type="text" id="user" class="masterTooltip" placeholder="Username" title="Please enter a username" required />
 
-                    <input name="signinButton" type="password" id="pass" class="masterTooltip" placeholder="Password" title="Please enter a password" required />
+<div class="pull-right" style="padding: 5px;">
+	
+<div id="status">
+</div>
+	<a href="<?php echo base_url(); ?>site/map" > <div class="fb-login-button col-md-4" data-max-rows="1" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div> </a>
+</div>
 
-                    <button name="signinButton" type="submit" id="signinButton" value="Sign In">Login</button>
-                </form>
-            </div>
-        </nav>
-
-    </div>
 </header>

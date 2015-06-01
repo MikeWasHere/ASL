@@ -59,7 +59,7 @@ class geoPlugin {
 		
 		if ( is_null( $ip ) ) {
 			$ip = '66.192.104.13';
-			// $_SERVER['REMOTE_ADDR'];
+			/* $_SERVER['REMOTE_ADDR']; */
 		}
 		
 		$host = str_replace( '{IP}', $ip, $this->host );

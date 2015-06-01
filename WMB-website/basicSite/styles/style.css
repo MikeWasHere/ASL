@@ -12,8 +12,6 @@ header{
 
 #top{
     background: url("../images/dark_wall.png");
-    width: 100%;
-    float: left;
 }
 
 #big{
@@ -21,6 +19,14 @@ header{
     float: left;
     width: 40%;
     margin: 0;
+}
+
+#sign{
+	font-family: 'Bevan', cursive;
+    color: #f5f5f5;
+    text-align: center;
+    width: 100%;
+    margin-top: 5%;
 }
 
 #lib{
@@ -43,22 +49,18 @@ header{
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
     transition: all .5s ease;
-
 }
 
-#sign{
-    float: left;
-    width: 50%;
+#status{
+	color: white;
 }
+
 
 #no{
     color: #E74700;
     font-size: 20px;
-    float: left;
-    clear: both;
     margin-top: 10px;
-    margin-left: 40px;
-    border-bottom: 2px #E74700 solid;
+    text-align: center;
     text-decoration: none;
     cursor: pointer;
     -webkit-transition: all .5s ease;
@@ -313,7 +315,6 @@ nav#login {
 .lp{
     font-size: 20px;
     font-family: 'Roboto Slab', serif;
-    text-align: center;
 }
 
 #bottom a{
@@ -345,24 +346,13 @@ footer{
 }
 
 #left{
-    float: left;
-    margin: 2%;
-    width: 35%;
     padding: 10px;
-    text-align: center;
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 20px;
     color: #f5f5f5;
 }
 
-#left p{
-    float: right;
-}
-
 #br{
-    float: left;
-    margin: 2%;
-    width: 50%;
     color: #f5f5f5;
     padding: 10px;
     font-family: 'Open Sans Condensed', sans-serif;
@@ -446,7 +436,7 @@ input.where{
     color: #000000;
     font-size: 20px;
     float: right;
-    margin: 5px;
+    margin: 10px 5px;
     width: 97%;
     font-family: 'Bevan', cursive;
     padding: 5px;

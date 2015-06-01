@@ -16,11 +16,12 @@ x = navigator.geolocation;
 	p = {
 		coords:{latitude:'0.24',longitude:'0.25'}
 		};
+		
+		
 	function success(position) {
 		
 		// Fetch the coordinates
-		
-		var mylat = position.coords.latitude;
+		var mylat = <?php echo 'hello world'; ?>;
 		var mylong = position.coords.longitude;
 		
 		// Gooogle-API-ready latitudes and longtitude string
@@ -45,10 +46,40 @@ x = navigator.geolocation;
 		p = position;
 		var url = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+mylat+','+mylong+'&radius=500&key=AIzaSyDBAXq9xOI_ynPffhkPhM1Z-8qFY1fUjVE';
 						
-		jQuery.post(p,function(data){
+	/*
+	jQuery.post(p,function(data){
 				
 			console.log(data)
 		});
+*/
+		
+		
+		
+		
+$(document).ready( function(){
+
+// Detect if hyperlink has been clicked //
+$("button[name=checkIn]").click( function(){
+ 
+// Pass the form values to the php file 
+$.post('site.php', p, function(ret){
+
+    // Detect if values have been passed back   
+    if(ret!=""){
+    // alert windows shows the returned value from php
+    alert("Value passed back from the php file... " + ret);
+    }
+    
+});
+ 
+// Important stops the page refreshing
+return false;
+ 
+}); 
+});
+		
+		
+		
 		
 		
 		
@@ -85,7 +116,7 @@ $('#lat').html(mylat);
 
 <div id="Destination">
     <h1>Destination</h1>
-    <form id="2ndForm">
+    <form id="2ndForm" method="post" action="<?php echo base_url()?>site/coor">
         <input name="signinButton" type="text" class="masterTooltip AB" placeholder="Please enter where you are departing from" title="departing from" required />
 
         <input name="signinButton" type="text" class="masterTooltip AB" placeholder="Please enter where your going" title= "where your going" required />
@@ -105,7 +136,7 @@ $('#lat').html(mylat);
         <input class="yas" type="time">
     </label>
 
-        <button name="signinButton" type="submit" id="getBus" onClick="myVar=setInterval(function(){success(p)},3000);" value="Sign In">Check in Bus</button>
+        <button name="checkIn" type="submit" id="getBus" value="Sign In">Check in Bus</button>
         <button name="stopTrackingButton" type="submit" id="stopBus" onClick="clearTimeout(myVar);" value="stop">Check out Bus</button>
     </form>
 
